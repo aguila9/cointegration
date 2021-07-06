@@ -1,0 +1,85 @@
+# Lecture Notes
+
+Brownian Motion Time Series / Random Walk is referred to as non-Stationary. If Brownian Motion is a series of residuals, The sum of residuals in continuous time will become an Integrated Series.
+
+**Causality Analysis Methods**
+
+- CORRELATION (misused to analyze causality) / affine
+- Explained Variance 
+    - R2 for PCA
+    - F test score for feature selection
+    - ANOVA (Variance in regression analysis)
+- Granger causality test. Allows to properly look at causality. Is like a covariance matrix transformed into a causality matrix of (0, 1). Residual Covariance Matrix is very informative for co-linearity. It may suggest that either a pair of time series are driven by one factor, or they show a colinear regression (Regression analysis doesn’t like co-linearity). It is not good to have large numbers in the residual covariance matrix, it means you have a large amount of unexplained variance between two variables.
+- Cointegration / affine
+
+**Equilibrium correction equation.**
+
+Is different than correlation. It will have two parts, short term and long term.
+
+If you try to regress 2 nonstationary time series, you are regressing 1 random process on another.  *You will get high R2*. But you can construct a time series of a spread ($\beta$ is used to make the time series of the same order).
+
+$$Price A – \beta Price B$$
+
+**If this is stationary you can stablish cointegration**, and you can engage in various types of forecasting.
+
+The proper statistical model to predict, to fit in, one price to another, or working with a stationary spread is cointegration.  Cointegration don’t predict prices, but you can model the spread and its conditions. Regression is not the way to go for causality.
+
+Linear regression we need quantities that are close to standard normal.  We compute linear regression or correlation on returns. We want to see critical value more than 3.  The p-value would be below 0.005, for correlated data sets.
+
+Vector Autoregression = endogenous “model free” set up. Fail at forecasting daily returns. For standard econometric tool daily is high frequency. MAPE = Mean Absolute Percentage Error
+
+**COINTEGRATION**
+
+The classical steady state Equilibrium means that we are going to have constant growth rate.  Constant growth rate will relate two returns, or in a simpler case we use price differences.
+
+$$\Delta P_tA = \beta_g \Delta P_tB$$
+
+$$\Delta P_t = P_t - P_{t-1}$$ 
+
+classical regression on returns. if $\beta_g$ is constant we have a steady state equilibrium.  This price difference can be a short term relationship (e.g. daily).
+
+For the long-term relationship we add the cointegrating factor, or spread.
+
+$$\Delta P_t^{A=1} = \beta_{11} \Delta P_t^B  + \beta_{12} \text{Coint Factor} $$
+
+$$\Delta P_t^{B=2} = \beta_{21} \Delta P_t^A  + \beta_{22} \text{Coint Factor} $$
+
+The Cointegrating Factor is the spread $P_t^A - \beta P_t^B$. That means that the spread influence PriceA.  This correction model is appropriate for equities/futures/rate levels.
+
+$\beta_{12}$ and $\beta_{22}$ should be negative an very smaill.
+
+Event driven arb. Acquisition driven. Target stock is a proxy, should start to move with the acquirer stock. They should co-move. We will check the cointegration between them.  Normalize $P_t/P_0$ separately for both stocks.
+
+$$e_t = \text{spread at time t}$$
+
+$$e_t = P_t^A – \beta P_t^B – constant$$
+
+We shifted from working with prices to working with differences in prices and created a model where spread drives the change.  (The bigger the spread, the bigger the correction and vice versa).
+
+**Granger-Johansen Representation**
+
+You can represent each time series as a collection of errors.
+
+If we regress $P_t^B$ on $P_t^A$ and $\beta$ is significan (Close to 1) regression is valid, and you can represent $P_t^B$ as something + the residuals of $P_t^A$.
+
+$$P_t^A = P_0^A + \sum \epsilon_s^A \;\text{Integrated Process}$$
+
+$$P_t^B = P_{t-1}^A + \epsilon_t^B \;\text{Valid Regression, Assumes} \beta \approx 1$$
+
+$$P_t^B = P_0^A + \sum \epsilon_s^A - \epsilon_t^A + \epsilon_t^B$$
+
+$P_t^A – P_t^B$ eliminates the residual $\sum \epsilon_s^A$. There are fewer feedbacks than variables.  You have cointegration.
+
+If we regress $P_t^B on P_t^A$ and the regression is valid. We do $P_t^A – P_t^B$ and formulate a random process. We no longer have $P_t^A$ or $P_t^B$. We end up with one random processes (Sum of residuals) driving A and B. **This is cointegration**. Co-movement is not the same!!!
+
+> **AR(1)** Autoregression process Order 1
+
+> **MA(inf)** Moving Average process Order Inf.
+
+Estimating Cointegration. Equilibrium Correction Model  **(ECM)**
+
+- **Step 1** – Regress $P_t^A$ on $P_t^B$ to get $e_t = P_t^A – \beta P_t^B – Constant$. Then test et for stationarity (ADF lag=1)
+
+- **Step 2** – Set up correction equations and check significance in short term component and then check significance for yesterday spread (same spread for both equations).
+
+- **Step 3** – OU SDE *fitting for trading strategy*
