@@ -1,6 +1,6 @@
 # Cointegration Reaserch
 
-Collection of material for the analysis of Time Series using cointegration.
+Notes and general information for the analysis of Time Series.
 
 ## Books
 
