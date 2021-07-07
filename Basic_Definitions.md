@@ -14,3 +14,18 @@ Unit root tests are tests for stationarity in a time series. A time series has s
 
 **Delivery Month Futures Code:**
 January = F, February = G, March = H, April = J, May = K, June = M, July = N, August = Q, September = U, October = V, November = X, December = Z
+
+**Autoregresive-Distributed lag (ADL) model**
+
+ADL(p,q)
+
+<img src="img/ADLpq.png" alt="ADL(p,q)">
+
+p is called the lag length of the dependent variable
+q is called the lag length of the explanatory variable
+
+Common ADL models
+
+<img src="img/ADLcommon.png" alt="ADL(p,q)">
+
+**Asymptotic normality** is a property of an estimator. “Asymptotic” refers to how an estimator behaves as the sample size gets larger (i.e. tends to infinity). “Normality” refers to the normal distribution, so an estimator that is asymptotically normal will have an approximately normal distribution as the sample size gets infinitely large. Asymptotic normality is very similar to the **Central Limit Theorem**. So similar in fact, that the two are (in general terms) the same thing. However, the CLT is a theorem, one that states:
