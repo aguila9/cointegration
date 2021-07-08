@@ -29,3 +29,7 @@ Common ADL models
 <img src="img/ADLcommon.png" alt="ADL(p,q)">
 
 **Asymptotic normality** is a property of an estimator. “Asymptotic” refers to how an estimator behaves as the sample size gets larger (i.e. tends to infinity). “Normality” refers to the normal distribution, so an estimator that is asymptotically normal will have an approximately normal distribution as the sample size gets infinitely large. Asymptotic normality is very similar to the **Central Limit Theorem**. So similar in fact, that the two are (in general terms) the same thing. However, the CLT is a theorem, one that states:
+
+**t-test** is a type of inferential statistic used to determine if there is a significant difference between the means of two groups, which may be related in certain features. It is mostly used when the data sets would follow a normal distribution and may have unknown variances. A t-test is used as a hypothesis testing tool, which allows testing of an assumption applicable to a population. 
+
+**Watson Statistic** (DW) statistic is a test for autocorrelation in the residuals from a statistical regression analysis. The Durbin-Watson statistic will always have a value between 0 and 4. A value of 2.0 means that there is no autocorrelation detected in the sample. Values from 0 to less than 2 indicate positive autocorrelation and values from from 2 to 4 indicate negative autocorrelation.
