@@ -37,3 +37,6 @@ Common ADL models
 **autoregressive–moving-average (ARMA)** models provide a description of a stationary stochastic process in terms of two polynomials, one for the autoregression (AR) and the second for the moving average (MA). The notation ARMA(p, q) refers to the model with p autoregressive terms and q moving-average terms. This model contains the AR(p) and MA(q) models,
 
 <img src="img/ARMA.png" alt="ARMA(p,q)">
+
+**Ergodicity, uniform mixing, and strong mixing** are three types of asymptotic independence, implying that two realizations of a time series become ever closer to independence as the distance between them increases. **Ergodicity** is a weak form of average asymptotic independence, and usually we will assume that stronger conditions hold which imply ergodicity. **Uniform mixing** implies **strong mixing**, and for a stationary process either of these implies **ergodicity**.
+
