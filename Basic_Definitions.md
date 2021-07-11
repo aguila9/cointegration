@@ -40,3 +40,16 @@ Common ADL models
 
 **Ergodicity, uniform mixing, and strong mixing** are three types of asymptotic independence, implying that two realizations of a time series become ever closer to independence as the distance between them increases. **Ergodicity** is a weak form of average asymptotic independence, and usually we will assume that stronger conditions hold which imply ergodicity. **Uniform mixing** implies **strong mixing**, and for a stationary process either of these implies **ergodicity**.
 
+Informally, a series is said to be **integrated** if it accumulates some past effects; such a series is non-stationary because its future path depends upon all such past influences, and is not tied to some mean to which it must eventually return.
+
+Lag operator
+
+<img src="img/lag_operator.png" alt="Lag Operator">
+
+First Difference operator
+
+<img src="img/first_difference.png" alt="First Difference Operator">
+
+Isomorphic representations are, for practical purposes, "the same"; they provide the same information about the group or algebra being represented. Representation theory therefore seeks to classify representations up to isomorphism.
+
+
