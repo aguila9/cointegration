@@ -50,6 +50,6 @@ First Difference operator
 
 <img src="img/first_difference.png" alt="First Difference Operator">
 
-Isomorphic representations are, for practical purposes, "the same"; they provide the same information about the group or algebra being represented. Representation theory therefore seeks to classify representations up to isomorphism.
+**Isomorphic representations** are, for practical purposes, "the same"; they provide the same information about the group or algebra being represented. Representation theory therefore seeks to classify representations up to isomorphism.
 
-
+**The Akaike information criterion (AIC)** is a mathematical method for evaluating how well a model fits the data it was generated from. In statistics, AIC is used to compare different possible models and determine which one is the best fit for the data.
